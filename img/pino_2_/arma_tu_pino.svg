@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1845.6 3180">
+  <g id="fondo">
+    <image id="Fondo_Imagen" data-name="Fondo Imagen" width="7690" height="9159" transform="scale(.24)" xlink:href="arma_tu_pino1.png"/>
+  </g>
+  <g id="fondopiezas">
+    <rect y="2198.16" width="1845.6" height="981.84" style="fill: #00253f;"/>
+  </g>
+  <g id="tapete1">
+    <image id="tapeteblanco_Imagen" data-name="tapeteblanco Imagen" width="5212" height="1722" transform="translate(322.08 1645.44) scale(.24)" xlink:href="arma_tu_pino2.png"/>
+  </g>
+  <g id="pino2">
+    <image id="Imagen_26_Imagen" data-name="Imagen 26 Imagen" width="5553" height="6272" transform="translate(348.72 230.88) scale(.24)" xlink:href="arma_tu_pino3.png"/>
+  </g>
+  <g id="_2pieza16" data-name="2pieza16">
+    <image id="Imagen_27_Imagen" data-name="Imagen 27 Imagen" width="998" height="1116" transform="translate(1197.36 2832.72) scale(.24)" xlink:href="arma_tu_pino4.png"/>
+  </g>
+  <g id="_2pieza15" data-name="2pieza15">
+    <image id="Imagen_28_Imagen" data-name="Imagen 28 Imagen" width="998" height="1116" transform="translate(803.04 2832.72) scale(.24)" xlink:href="arma_tu_pino5.png"/>
+  </g>
+  <g id="_2pieza14" data-name="2pieza14">
+    <image id="Imagen_29_Imagen" data-name="Imagen 29 Imagen" width="1016" height="1064" transform="translate(1536.72 2845.2) scale(.24)" xlink:href="arma_tu_pino6.png"/>
+  </g>
+  <g id="_2pieza13" data-name="2pieza13">
+    <image id="Imagen_30_Imagen" data-name="Imagen 30 Imagen" width="1195" height="916" transform="translate(63.36 2880.72) scale(.24)" xlink:href="arma_tu_pino7.png"/>
+  </g>
+  <g id="_2pieza12" data-name="2pieza12">
+    <image id="Imagen_31_Imagen" data-name="Imagen 31 Imagen" width="891" height="997" transform="translate(1566.72 2540.88) scale(.24)" xlink:href="arma_tu_pino8.png"/>
+  </g>
+  <g id="_2pieza11" data-name="2pieza11">
+    <image id="Imagen_32_Imagen" data-name="Imagen 32 Imagen" width="1016" height="1064" transform="translate(459.36 2845.2) scale(.24)" xlink:href="arma_tu_pino9.png"/>
+  </g>
+  <g id="_2pieza10" data-name="2pieza10">
+    <image id="Imagen_33_Imagen" data-name="Imagen 33 Imagen" width="423" height="700" transform="translate(432.96 2305.44) scale(.24)" xlink:href="arma_tu_pino10.png"/>
+  </g>
+  <g id="_2pieza9" data-name="2pieza9">
+    <image id="Imagen_34_Imagen" data-name="Imagen 34 Imagen" width="423" height="700" transform="translate(105.36 2612.16) scale(.24)" xlink:href="arma_tu_pino11.png"/>
+  </g>
+  <g id="_2pieza8" data-name="2pieza8">
+    <image id="Imagen_35_Imagen" data-name="Imagen 35 Imagen" width="533" height="838" transform="translate(286.32 2462.16) scale(.24)" xlink:href="arma_tu_pino12.png"/>
+  </g>
+  <g id="_2pieza7" data-name="2pieza7">
+    <image id="Imagen_36_Imagen" data-name="Imagen 36 Imagen" width="568" height="733" transform="translate(1317.12 2254.56) scale(.24)" xlink:href="arma_tu_pino13.png"/>
+  </g>
+  <g id="_2pieza6" data-name="2pieza6">
+    <image id="Imagen_37_Imagen" data-name="Imagen 37 Imagen" width="558" height="785" transform="translate(1614.48 2254.56) scale(.24)" xlink:href="arma_tu_pino14.png"/>
+  </g>
+  <g id="_2pieza5" data-name="2pieza5">
+    <image id="Imagen_38_Imagen" data-name="Imagen 38 Imagen" width="840" height="975" transform="translate(995.76 2254.56) scale(.24)" xlink:href="arma_tu_pino15.png"/>
+  </g>
+  <g id="_2pieza4" data-name="2pieza4">
+    <image id="Imagen_39_Imagen" data-name="Imagen 39 Imagen" width="943" height="1091" transform="translate(1227.12 2491.2) scale(.24)" xlink:href="arma_tu_pino16.png"/>
+  </g>
+  <g id="_2pieza3" data-name="2pieza3">
+    <image id="Imagen_40_Imagen" data-name="Imagen 40 Imagen" width="647" height="748" transform="translate(483.6 2573.52) scale(.24)" xlink:href="arma_tu_pino17.png"/>
+  </g>
+  <g id="_2pieza2" data-name="2pieza2">
+    <image id="Imagen_41_Imagen" data-name="Imagen 41 Imagen" width="838" height="970" transform="translate(822.24 2520.24) scale(.24)" xlink:href="arma_tu_pino18.png"/>
+  </g>
+  <g id="_2pieza1" data-name="2pieza1">
+    <image id="Imagen_42_Imagen" data-name="Imagen 42 Imagen" width="687" height="793" transform="translate(638.88 2254.56) scale(.24)" xlink:href="arma_tu_pino19.png"/>
+  </g>
+  <g id="estrella2">
+    <image id="Imagen_43_Imagen" data-name="Imagen 43 Imagen" width="1072" height="1215" transform="translate(65.04 2254.56) scale(.24)" xlink:href="arma_tu_pino20.png"/>
+  </g>
+</svg>

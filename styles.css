@@ -1,0 +1,49 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.contenedor{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    overflow: hidden;
+    background-image: url(./img/pino_1_/arma_tu_pino1.png);;
+}   
+.contenedor img{
+    width: 100%;
+    height: auto;
+}
+h1{
+    text-align: center;
+    padding-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+}
+.fondo{
+    overflow: hidden;
+    height: fit-content;
+    width: 100vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.pino{
+    z-index: 1;
+}
+.mat-container{
+    z-index: 0;
+    transform: translateY(-100);
+    -webkit-transform: translateY(-100);
+    -moz-transform: translateY(-100);
+    -ms-transform: translateY(-100);
+    -o-transform: translateY(-100);
+}
+#carouselPino .carousel-item, #carouselPino .carousel-item.active, #carouselPino .carousel-item-next, #carouselPino .carousel-item-prev{
+    position: relative;
+    z-index: 1;
+}
+#carouselMat .carousel-item, #carouselMat .carousel-item.active, #carouselMat .carousel-item-next, #carouselMat .carousel-item-prev{
+    position: relative;
+    z-index: 1;
+}
