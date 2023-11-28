@@ -1,5 +1,7 @@
 body{
     background-color: #00253f;
+    overflow-x: hidden;
+    overflow: hidden;
 }
 *{
     padding: 0;
@@ -49,4 +51,7 @@ h1{
 #carouselMat .carousel-item, #carouselMat .carousel-item.active, #carouselMat .carousel-item-next, #carouselMat .carousel-item-prev{
     position: relative;
     z-index: 1;
+}
+.hidden{
+    display: none;
 }
