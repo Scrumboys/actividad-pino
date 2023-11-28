@@ -1,5 +1,5 @@
 import { gsap } from 'https://cdn.skypack.dev/gsap';
-import { Draggable } from 'https://cdn.skypack.dev/@shopify/draggable';
+import { Draggable } from 'https://cdn.skypack.dev/gsap/Draggable';
 
 gsap.registerPlugin(Draggable);
 
@@ -83,19 +83,51 @@ elements_caja3.forEach(element => {
 caja2.classList.add('nsh');
 caja3.classList.add('nsh');
 
-// Draggable.create(elements_caja1, {
-//     type: 'x,y',
-//     bounds: '.parent',
-//     edgeResistance: 0.65,
-//     inertia: true,
-// });
+Draggable.create(elements_caja1, {
+    type: 'x,y',
+    bounds: '.parent',
+    edgeResistance: 0.65,
+    onDragEnd: function(){
+        const boundingBox = this.target.getBoundingClientRect();
+        const pino1BoundingBox = pino1.getBoundingClientRect();
+        const pino2BoundingBox = pino2.getBoundingClientRect();
+        const pino3BoundingBox = pino3.getBoundingClientRect();
+
+        if (boundingBox.left === pino1BoundingBox.left && boundingBox.top === pino1BoundingBox.top ||
+            boundingBox.left === pino2BoundingBox.left && boundingBox.top === pino2BoundingBox.top ||
+            boundingBox.left === pino3BoundingBox.left && boundingBox.top === pino3BoundingBox.top) {
+            this.target.classList.add('used');
+        }else{
+            this.target.classList.remove('used');
+            if(caja1.classList.contains('nsh')){
+                gsap.to(this.target, {duration: 0.7, opacity:0, x: -10000});
+            }
+            else{
+                gsap.to(this.target, {duration: 0.7, x: elements_caja1_originalx[this.index], y: elements_caja1_originaly[this.index], scale: elements_caja1_originalscale[this.index]});
+            }
+        }
+    }
+});
+
+Draggable.create(elements_caja2, {
+    type: 'x,y',
+    bounds: '.parent',
+    edgeResistance: 0.65,
+});
+
+Draggable.create(elements_caja3, {
+    type: 'x,y',
+    bounds: '.parent',
+    edgeResistance: 0.65,
+});
+
     
 
 function derechaCaja(){
     if(cajaActual == 1){
         elements_caja1.forEach((element, index) => {
             if(!element.classList.contains('used')){
-                gsap.to(element, {duration: 0.3,  opacity:0, x:-10000, onComplete: () => {
+                gsap.to(element, {duration: 0.7,  opacity:0, x:-10000, onComplete: () => {
                     element.classList.add('hidden');
                     caja1.classList.add('nsh');
                 }});
@@ -105,9 +137,9 @@ function derechaCaja(){
             if(!element.classList.contains('used')){
                 element.classList.remove('hidden');
                 caja3.classList.remove('nsh');
-                gsap.to(element, {duration: 0.3,  opacity:0, x: elements_caja3_originalx[index], y:elements_caja3_originaly[index], scale: elements_caja3_originalscale[index], onComplete: () => {
+                gsap.to(element, {duration: 0.7,  opacity:0, x: elements_caja3_originalx[index], y:elements_caja3_originaly[index], scale: elements_caja3_originalscale[index], onComplete: () => {
                     gsap.to(element, {opacity:1});
-                    gsap.from(element, {duration: 0.3, opacity:1, x: 10000});
+                    gsap.from(element, {duration: 0.7, opacity:1, x: 10000});
                 }});
             }
         });
@@ -115,7 +147,7 @@ function derechaCaja(){
     }else if(cajaActual == 2){
         elements_caja2.forEach((element, index) => {
             if(!element.classList.contains('used')){
-                gsap.to(element, {duration: 0.3, opacity:0, x: -10000, onComplete: () => {
+                gsap.to(element, {duration: 0.7, opacity:0, x: -10000, onComplete: () => {
                     element.classList.add('hidden');
                     caja2.classList.add('nsh');
                 }});
@@ -125,9 +157,9 @@ function derechaCaja(){
             if(!element.classList.contains('used')){
                 element.classList.remove('hidden');
                 caja1.classList.remove('nsh');
-                gsap.to(element, {duration: 0.3, opacity:0, x: elements_caja1_originalx[index], y:elements_caja1_originaly[index], scale: elements_caja1_originalscale[index], onComplete: () => {
+                gsap.to(element, {duration: 0.7, opacity:0, x: elements_caja1_originalx[index], y:elements_caja1_originaly[index], scale: elements_caja1_originalscale[index], onComplete: () => {
                     gsap.to(element, {opacity:1});
-                    gsap.from(element, {duration: 0.3, opacity:1, x: 10000});
+                    gsap.from(element, {duration: 0.7, opacity:1, x: 10000});
                 }});
             }
         });
@@ -135,7 +167,7 @@ function derechaCaja(){
     }else if(cajaActual == 3){
         elements_caja3.forEach((element, index) => {
             if (!element.classList.contains('used')) {
-                gsap.to(element, { duration: 0.3, opacity: 0, x: -10000, onComplete: () => {
+                gsap.to(element, { duration: 0.7, opacity: 0, x: -10000, onComplete: () => {
                     element.classList.add('hidden');
                     caja3.classList.add('nsh');
                 } });
@@ -145,9 +177,9 @@ function derechaCaja(){
             if (!element.classList.contains('used')) {
                 element.classList.remove('hidden');
                 caja1.classList.remove('nsh');
-                gsap.to(element, { duration: 0.3, opacity: 0, x: elements_caja1_originalx[index], y: elements_caja1_originaly[index], scale: elements_caja1_originalscale[index] , onComplete: () => {
+                gsap.to(element, { duration: 0.7, opacity: 0, x: elements_caja1_originalx[index], y: elements_caja1_originaly[index], scale: elements_caja1_originalscale[index] , onComplete: () => {
                     gsap.to(element, {opacity:1});
-                    gsap.from(element, { duration: 0.3, opacity: 0, x: 10000 });
+                    gsap.from(element, { duration: 0.7, opacity: 0, x: 10000 });
                 }});
             }
         });
@@ -159,7 +191,7 @@ function izquierdaCaja(){
     if(cajaActual == 1){
         elements_caja1.forEach((element, index) => {
             if(!element.classList.contains('used')){
-                gsap.to(element, {duration: 0.3,  opacity:0, x: 10000, onComplete: () => {
+                gsap.to(element, {duration: 0.7,  opacity:0, x: 10000, onComplete: () => {
                     element.classList.add('hidden');
                     caja1.classList.add('nsh');
                 }});
@@ -170,9 +202,9 @@ function izquierdaCaja(){
                 console.log("x: ",elements_caja3_originalx[index], "y: ",elements_caja3_originaly[index], "scale: ",elements_caja3_originalscale[index]);
                 element.classList.remove('hidden');
                 caja3.classList.remove('nsh');
-                gsap.to(element, {duration: 0.3,  opacity:0, x: elements_caja3_originalx[index], y:elements_caja3_originaly[index], scale: elements_caja3_originalscale[index], onComplete: () => {
+                gsap.to(element, {duration: 0.7,  opacity:0, x: elements_caja3_originalx[index], y:elements_caja3_originaly[index], scale: elements_caja3_originalscale[index], onComplete: () => {
                     gsap.to(element, {opacity:1});
-                    gsap.from(element, {duration: 0.3, opacity:1, x: -10000});}
+                    gsap.from(element, {duration: 0.7, opacity:1, x: -10000});}
                 });
             }
         });
@@ -180,7 +212,7 @@ function izquierdaCaja(){
     } else if (cajaActual == 2) {
         elements_caja2.forEach((element, index) => {
             if (!element.classList.contains('used')) {
-                gsap.to(element, { duration: 0.3, opacity: 0, x: 10000, onComplete: () => {
+                gsap.to(element, { duration: 0.7, opacity: 0, x: 10000, onComplete: () => {
                     element.classList.add('hidden');
                     caja2.classList.add('nsh');
                 }});
@@ -190,9 +222,9 @@ function izquierdaCaja(){
             if (!element.classList.contains('used')) {
                 element.classList.remove('hidden');
                 caja1.classList.remove('nsh');
-                gsap.to(element, { duration: 0.3, opacity: 0, x: elements_caja1_originalx[index], y: elements_caja1_originaly[index], scale: elements_caja1_originalscale[index], onComplete: () => {
+                gsap.to(element, { duration: 0.7, opacity: 0, x: elements_caja1_originalx[index], y: elements_caja1_originaly[index], scale: elements_caja1_originalscale[index], onComplete: () => {
                     gsap.to(element, {opacity:1});
-                    gsap.from(element, { duration: 0.3, opacity: 0, x: -10000 });}
+                    gsap.from(element, { duration: 0.7, opacity: 0, x: -10000 });}
                 });
             }
         });
@@ -200,7 +232,7 @@ function izquierdaCaja(){
     }else if(cajaActual == 3){
         elements_caja3.forEach((element, index) => {
             if(!element.classList.contains('used')){
-                gsap.to(element, {duration: 0.3,  opacity:0, x: 10000, onComplete: () => {
+                gsap.to(element, {duration: 0.7,  opacity:0, x: 10000, onComplete: () => {
                     element.classList.add('hidden');
                     caja3.classList.add('nsh');
                 }});
@@ -210,9 +242,9 @@ function izquierdaCaja(){
             if(!element.classList.contains('used')){
                 element.classList.remove('hidden');
                 caja2.classList.remove('nsh');
-                gsap.to(element, {duration: 0.3,  opacity:0, x: elements_caja2_originalx[index], y:elements_caja2_originaly[index], scale: elements_caja2_originalscale[index], onComplete: () => {
+                gsap.to(element, {duration: 0.7,  opacity:0, x: elements_caja2_originalx[index], y:elements_caja2_originaly[index], scale: elements_caja2_originalscale[index], onComplete: () => {
                     gsap.to(element, {opacity:1});
-                    gsap.from(element, {duration: 0.3, opacity:0, x: -10000});}
+                    gsap.from(element, {duration: 0.7, opacity:0, x: -10000});}
                 });
             }
         });
