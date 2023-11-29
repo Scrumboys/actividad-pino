@@ -6,9 +6,9 @@ gsap.registerPlugin(Draggable);
 let cajaActual = 1;
 let pinoActual = 1;
 
-const caja1 = document.querySelector('#decoraciones_1');
-const caja2 = document.querySelector('#decoraciones_2');
-const caja3 = document.querySelector('#decoraciones_3');
+const caja1 = document.getElementById('decoraciones_1');
+const caja2 = document.getElementById('decoraciones_2');
+const caja3 = document.getElementById('decoraciones_3');
 
 let elements_caja1 = [];
 let elements_caja2 = [];
@@ -25,22 +25,22 @@ let elements_caja3_originaly = [];
 let elements_caja3_originalscale = [];
 
 for(let i=1; i<=20; i++){
-    elements_caja1.push(document.querySelector(`#_1pieza${i}`));
+    elements_caja1.push(document.getElementById(`_1pieza${i}`));
 }
-elements_caja1.push(document.querySelector("#estrella1"));
+elements_caja1.push(document.getElementById("estrella1"));
 for(let i=1; i<=16; i++){
-    elements_caja2.push(document.querySelector(`#_2pieza${i}`));
+    elements_caja2.push(document.getElementById(`_2pieza${i}`));
 }
-elements_caja2.push(document.querySelector("#estrella2"));
+elements_caja2.push(document.getElementById("estrella2"));
 for(let i=1; i<=22; i++){
-    elements_caja3.push(document.querySelector(`#_3pieza${i}`));
+    elements_caja3.push(document.getElementById(`_3pieza${i}`));
 }
-elements_caja3.push(document.querySelector("#estrella3"));
+elements_caja3.push(document.getElementById("estrella3"));
 
 
-const pino1 = document.querySelector('#pino1');
-const pino2 = document.querySelector('#pino2');
-const pino3 = document.querySelector('#pino3');
+const pino1 = document.getElementById('pino1');
+const pino2 = document.getElementById('pino2');
+const pino3 = document.getElementById('pino3');
 
 pino2.classList.add('hidden');
 pino3.classList.add('hidden');
@@ -174,9 +174,7 @@ function vanishElement(element) {
 
 function showNextCaja(elements_caja, caja, nextCaja) {
     elements_caja.forEach((element, index) => {
-        console.log(element.id);
         if (!element.classList.contains('used')) {
-            console.log("No contiene used");
             element.classList.remove('hidden');
             if (nextCaja == 1) {
                 animateElement(element, elements_caja1_originalx[index], elements_caja1_originaly[index], elements_caja1_originalscale[index]);
@@ -350,7 +348,7 @@ function izquierdaPino(){
     }
 }
 
-document.querySelector('#derechaCaja').addEventListener('click', derechaCaja);
-document.querySelector('#izquierdaCaja').addEventListener('click', izquierdaCaja);
-document.querySelector('#derechaPino').addEventListener('click', derechaPino);
-document.querySelector('#izquierdaPino').addEventListener('click', izquierdaPino);
+document.getElementById('derechaCaja').addEventListener('click', derechaCaja);
+document.getElementById('izquierdaCaja').addEventListener('click', izquierdaCaja);
+document.getElementById('derechaPino').addEventListener('click', derechaPino);
+document.getElementById('izquierdaPino').addEventListener('click', izquierdaPino);
