@@ -6,9 +6,16 @@ gsap.registerPlugin(Draggable);
 let cajaActual = 1;
 let pinoActual = 1;
 
+const contenedorPino = document.querySelector('#contenedorPino');
+const pantallaInicio = document.querySelector('#pantallaInicio');
+const pantallaFinal = document.querySelector('#pantallaFinal');
+
 const caja1 = document.getElementById('decoraciones_1');
 const caja2 = document.getElementById('decoraciones_2');
 const caja3 = document.getElementById('decoraciones_3');
+
+const btnJugar = document.querySelector('#botonjugar');
+const btnAviso = document.querySelector('#botonaviso');
 
 let elements_caja1 = [];
 let elements_caja2 = [];
@@ -352,3 +359,16 @@ document.getElementById('derechaCaja').addEventListener('click', derechaCaja);
 document.getElementById('izquierdaCaja').addEventListener('click', izquierdaCaja);
 document.getElementById('derechaPino').addEventListener('click', derechaPino);
 document.getElementById('izquierdaPino').addEventListener('click', izquierdaPino);
+
+document.querySelector('#botonaviso').addEventListener('click', () => {
+    pantallaFinal.style.display = 'flex';
+});
+
+document.querySelector('#x').addEventListener('click', () => {
+    pantallaFinal.style.display = 'none';
+});
+
+document.querySelector('#botonjugar').addEventListener('click', () => {
+    pantallaInicio.style.display = 'none';
+    contenedorPino.style.display = 'block';
+});

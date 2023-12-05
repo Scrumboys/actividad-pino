@@ -12,7 +12,7 @@ body{
     height: auto;
     text-align: center;
     overflow: hidden;
-    background-image: url(./img/pino_1_/arma_tu_pino1.png);;
+    background-image: url(./img/pino_1_/arma_tu_pino1.png);
 }   
 .contenedor img{
     width: 100%;
@@ -51,9 +51,45 @@ h1{
     position: relative;
     z-index: 1;
 }
+
 .hidden{
-    display: none;
+    display: none !important;
 }
+
 #izquierdaCaja:hover, #derechaCaja:hover, #izquierdaPino:hover, #derechaPino:hover{
     cursor: pointer;
+}
+
+#pantallaInicio {
+    width: 100%;
+    height: 100%;
+}
+
+#pantallaFinal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#pantallaFinal svg {
+    width: 90%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+  
+    to {
+        opacity: 1;
+    }
+}
+  
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }
