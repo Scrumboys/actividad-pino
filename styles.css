@@ -1,9 +1,9 @@
-body{
+body {
     background-color: #00253f;
     overflow-x: hidden;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
