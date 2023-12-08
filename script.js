@@ -362,6 +362,7 @@ document.getElementById('izquierdaPino').addEventListener('click', izquierdaPino
 
 document.querySelector('#botonaviso').addEventListener('click', () => {
     pantallaFinal.style.display = 'grid';
+    contenedorPino.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
 });
 
 document.querySelector('#x').addEventListener('click', () => {
@@ -370,5 +371,8 @@ document.querySelector('#x').addEventListener('click', () => {
 
 document.querySelector('#botonjugar').addEventListener('click', () => {
     pantallaInicio.style.display = 'none';
-    contenedorPino.style.display = 'block';
+    contenedorPino.style.display = 'grid';
+    const clientRect = document.getElementsByTagName('body')[0].getClientRects();
+    pantallaFinal.style.height = `${clientRect[0].height}px`;
 });
+
