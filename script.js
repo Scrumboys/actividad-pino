@@ -361,7 +361,7 @@ document.getElementById('derechaPino').addEventListener('click', derechaPino);
 document.getElementById('izquierdaPino').addEventListener('click', izquierdaPino);
 
 document.querySelector('#botonaviso').addEventListener('click', () => {
-    pantallaFinal.style.display = 'flex';
+    pantallaFinal.style.display = 'grid';
 });
 
 document.querySelector('#x').addEventListener('click', () => {
